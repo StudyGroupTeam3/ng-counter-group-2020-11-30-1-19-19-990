@@ -17,6 +17,10 @@ export class CounterGroupComponent implements OnInit {
   public counters: Array<Counter>;
 
   ngOnInit(): void {
+    this.generateOunters();
+  }
+
+  generateOunters(): void {
     for (let index = 0; index < this.size; index++) {
       this.counters.push(new Counter());
     }
@@ -26,6 +30,12 @@ export class CounterGroupComponent implements OnInit {
     return this.counters.reduce((result, counter) => {
       return counter.account + result;
     }, 0);
+  }
+
+  public setSize(size: number): void {
+    this.size = size;
+    this.counters = new Array<Counter>();
+    this.generateOunters();
   }
 
 }
