@@ -22,4 +22,10 @@ export class CounterGroupComponent implements OnInit {
     }
   }
 
+  public sum(): number {
+    return this.counters.reduce((result, counter) => {
+      return counter.account + result;
+    }, 0);
+  }
+
 }

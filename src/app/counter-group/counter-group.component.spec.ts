@@ -31,4 +31,17 @@ describe('CounterGroupComponent', () => {
   it('should countain counters when create instatnce', () => {
     expect(component.counters.length).toBe(component.size);
   });
+
+  it('should return sum of all counters when call sum', () => {
+    // given
+    let expectedSum = 0;
+    component.counters.forEach(counter => {
+      counter.account = 1;
+      expectedSum += counter.account;
+    });
+    // when
+    const sum = component.sum();
+    // then
+    expect(sum).toBe(expectedSum);
+  });
 });
