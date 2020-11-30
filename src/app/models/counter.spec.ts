@@ -28,4 +28,16 @@ describe('Counter', () => {
     // then
     expect(counter.account).toBe(account + 1);
   });
+
+  it('should decrease acount by 1 when call decrease()', () => {
+    // given
+    const account = 0;
+
+    // when
+    const counter = new Counter(account);
+    counter.decrease();
+
+    // then
+    expect(counter.account).toBe(account - 1);
+  });
 });
