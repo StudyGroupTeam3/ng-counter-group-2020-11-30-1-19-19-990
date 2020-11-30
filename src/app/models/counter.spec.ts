@@ -1,16 +1,21 @@
 import { Counter } from './counter';
 
 describe('Counter', () => {
+  let account: number;
+  let counter: Counter;
+  beforeEach(() => {
+    account = 0;
+    counter = new Counter(account);
+  });
+
   it('should create an instance', () => {
     expect(new Counter()).toBeTruthy();
   });
 
   it('should set account when create an instance', () => {
     // given
-    const account = 10;
 
     // when
-    const counter =  new Counter(account);
 
     // then
     expect(counter.account).toBe(account);
@@ -18,8 +23,6 @@ describe('Counter', () => {
 
   it('should increase account by 1 when call increase', () => {
     // given
-    const account = 0;
-    const counter =  new Counter(account);
 
     // when
     counter.increase();
@@ -30,8 +33,6 @@ describe('Counter', () => {
 
   it('should decrease account by 1 when call decrease', () => {
     // given
-    const account = 0;
-    const counter =  new Counter(account);
 
     // when
     counter.decrease();
@@ -43,8 +44,7 @@ describe('Counter', () => {
   it('should count be reset as 0 when click reset button', () => {
 
     // given
-    const account = 5;
-    const counter =  new Counter(account);
+    counter.account = 5;
 
     // when
     counter.resetCount();
