@@ -1,5 +1,5 @@
 import { Counter } from './../models/counter';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 
 @Component({
@@ -8,16 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent implements OnInit {
+  constructor() {}
 
-  public counter: Counter;
-
-  public get account(): number {
+  public get account(): number{
     return this.counter.account;
   }
 
-  constructor() {
-    this.counter = new Counter();
-  }
+  @Input() counter: Counter = new Counter();
 
   ngOnInit(): void {
   }
