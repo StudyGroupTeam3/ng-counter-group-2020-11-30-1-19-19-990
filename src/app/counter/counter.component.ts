@@ -28,4 +28,8 @@ export class CounterComponent implements OnInit {
     this.counter.decrease();
   }
 
+  public reset(): void {
+    this.counter.reset();
+  }
+
 }

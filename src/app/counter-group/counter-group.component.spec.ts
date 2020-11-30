@@ -45,4 +45,21 @@ describe('CounterGroupComponent', () => {
     // then
     expect(component.counters.length).toBe(10);
   });
+
+  it('should change sum of accounts of counters when reset any component', () => {
+    // given
+    component.counters.forEach(counter => {
+      counter.account = 1;
+    });
+    // when
+    component.counters[0].reset();
+    let expectedSum = 0;
+    component.counters.forEach(counter => {
+      counter.account = 1;
+      expectedSum += counter.account;
+    });
+    const sum = component.sum();
+    // then
+    expect(sum).toBe(expectedSum);
+  });
 });
