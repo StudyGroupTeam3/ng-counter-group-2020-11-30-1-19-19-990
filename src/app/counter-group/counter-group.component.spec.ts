@@ -24,14 +24,6 @@ describe('CounterGroupComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should set size when create instatnce', () => {
-    expect(component.size).toBe(5);
-  });
-
-  it('should countain counters when create instatnce', () => {
-    expect(component.counters.length).toBe(component.size);
-  });
-
   it('should return sum of all counters when call sum', () => {
     // given
     let expectedSum = 0;
