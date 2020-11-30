@@ -1,3 +1,4 @@
+import { CounterComponent } from './../counter/counter.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CounterGroupComponent } from './counter-group.component';
@@ -8,9 +9,11 @@ describe('CounterGroupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CounterGroupComponent ]
+      declarations: [
+        CounterGroupComponent,
+        CounterComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +24,13 @@ describe('CounterGroupComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should set size when create instance', () => {
+    expect(component.size).toBe(5);
+  });
+
+  it('should contain counters when create instance', () => {
+    expect(component.counters.length).toBe(component.size);
   });
 });

@@ -1,1 +1,3 @@
-<p>counter-group works!</p>
+<div *ngFor="let counter of counters">
+  <app-counter [counter]="counter"></app-counter>
+</div>
