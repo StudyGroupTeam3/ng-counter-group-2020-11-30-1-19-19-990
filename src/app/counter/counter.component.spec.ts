@@ -8,9 +8,9 @@ describe('CounterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CounterComponent ]
+      declarations: [CounterComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -25,7 +25,7 @@ describe('CounterComponent', () => {
 
   it('should increase account when call increase', () => {
     // given
-    component.account = 0;
+    component.counter.account = 0;
 
     // when
     component.increase();
@@ -36,7 +36,7 @@ describe('CounterComponent', () => {
 
   it('should decrease account when call decrease', () => {
     // given
-    component.account = 0;
+    component.counter.account = 0;
 
     // when
     component.decrease();
