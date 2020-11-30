@@ -46,4 +46,23 @@ describe('CounterGroupService', () => {
     // then
     expect(sum).toBe(expectedSum);
   });
+
+  it('should all count be reset as 0 and sum change when click reset button', () => {
+    // given
+    let value = 1;
+    service.counters.forEach(item => {
+      item.account = value;
+      value++;
+    });
+
+    // when
+    service.resetCounters();
+    const sum = service.sum();
+
+    // then
+    expect(sum).toBe(0);
+    service.counters.forEach(item => {
+      expect(item.account).toBe(0);
+    });
+  });
 });

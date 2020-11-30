@@ -25,5 +25,9 @@ export class CounterGroupComponent implements OnInit {
   public setSize(size: number): void {
     this.service.setSize(size);
   }
+
+  public resetCounters(): void {
+    this.service.resetCounters();
+  }
 }
 
