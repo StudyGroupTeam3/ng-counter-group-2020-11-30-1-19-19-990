@@ -9,6 +9,8 @@ export class CounterGroupComponent implements OnInit {
 
   constructor() { }
 
+  public size: number = 5;
+
   ngOnInit(): void {
   }
 

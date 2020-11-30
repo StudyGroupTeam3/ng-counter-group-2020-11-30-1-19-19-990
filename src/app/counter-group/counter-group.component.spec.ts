@@ -8,9 +8,9 @@ describe('CounterGroupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CounterGroupComponent ]
+      declarations: [CounterGroupComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +21,9 @@ describe('CounterGroupComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should set size when create instatnce', () => {
+    expect(component.size).toBe(5);
   });
 });
