@@ -43,4 +43,40 @@ describe('CounterGroupService', () => {
     // then
     expect(service.counters.length).toBe(10);
   });
+
+  it('should change sum of accounts of counters when reset any component', () => {
+    // given
+    service.counters.forEach(counter => {
+      counter.account = 1;
+    });
+    // when
+    service.counters[0].reset();
+    let expectedSum = 0;
+    service.counters.forEach(counter => {
+      counter.account = 1;
+      expectedSum += counter.account;
+    });
+    const sum = service.sum();
+    // then
+    expect(sum).toBe(expectedSum);
+  });
+
+  it('should clear all counter in counters when call reset', () => {
+    // given
+
+    // when
+    service.reset();
+    // then
+    expect(service.counters.length).toBe(0);
+  });
+
+  it('should change sum to 0 when call reset', () => {
+    // given
+
+    // when
+    service.reset();
+    const sum = service.sum();
+    // then
+    expect(sum).toBe(0);
+  });
 });

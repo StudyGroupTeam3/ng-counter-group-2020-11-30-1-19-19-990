@@ -32,4 +32,8 @@ export class CounterGroupService {
     this.generateCounters();
   }
 
+  public reset(): void {
+    this.counters = new Array<Counter>();
+  }
+
 }
