@@ -32,8 +32,8 @@ export class CounterGroupComponent implements OnInit {
     }, 0);
   }
 
-  public setSize(size: number): void {
-    this.size = size;
+  public setSize(size: string): void {
+    this.size = +size;
     this.counters = new Array<Counter>();
     this.generateOunters();
   }

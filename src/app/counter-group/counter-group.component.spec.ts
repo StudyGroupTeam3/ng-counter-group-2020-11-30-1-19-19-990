@@ -49,7 +49,7 @@ describe('CounterGroupComponent', () => {
     // given
 
     // when
-    component.setSize(10);
+    component.setSize('10');
     // then
     expect(component.counters.length).toBe(10);
   });

@@ -1,4 +1,4 @@
-<p>counter-group works!</p>
+<input type="number" #size><button (click)="setSize(size.value)">setSize</button>
 <div *ngFor="let counter of counters">
     <app-counter [counter]="counter"></app-counter>
 </div>
