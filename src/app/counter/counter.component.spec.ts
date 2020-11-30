@@ -25,26 +25,4 @@ describe('CounterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should increase counter.account when call increase', () => {
-    // given
-    component.counter.account = 0;
-
-    // when
-    component.increase();
-
-    // then
-    expect(component.account).toBe(1);
-  });
-
-  it('should decrease counter.account when call decrease', () => {
-    // given
-    component.counter.account = 0;
-
-    // when
-    component.decrease();
-
-    // then
-    expect(component.account).toBe(-1);
-  });
 });

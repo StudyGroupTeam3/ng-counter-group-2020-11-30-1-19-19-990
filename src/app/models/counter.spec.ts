@@ -39,4 +39,17 @@ describe('Counter', () => {
     // then
     expect(counter.account).toBe(account - 1);
   });
+
+  it('should count be reset as 0 when click reset button', () => {
+
+    // given
+    const account = 5;
+    const counter =  new Counter(account);
+
+    // when
+    counter.resetCount();
+
+    // then
+    expect(counter.account).toBe(0);
+  });
 });

@@ -39,9 +39,6 @@ describe('CounterGroupService', () => {
     service.counters.forEach(item => {
       expectedSum += item.account;
     });
-    // component.counters[0].account = 1;
-    // component.counters[1].account = 2;
-    // component.counters[2].account = 3;
 
     // when
     const sum = service.sum();
