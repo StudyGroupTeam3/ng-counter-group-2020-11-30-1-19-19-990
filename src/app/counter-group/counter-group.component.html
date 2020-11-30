@@ -1,4 +1,5 @@
-<input [(ngModel)]="size" type="number" (keyup.enter)="setSize(size)"><button (click) = "setSize(size)">setSize</button>
+<input [(ngModel)]="service.size" type="number" (keyup.enter)="setSize(service.size)">
+<button (click) = "setSize(service.size)">setSize</button>
 
 <div *ngFor="let counter of counters">
   <app-counter [counter]="counter"></app-counter>

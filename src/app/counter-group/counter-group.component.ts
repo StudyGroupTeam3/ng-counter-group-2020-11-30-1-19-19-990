@@ -1,3 +1,4 @@
+import { CounterGroupService } from './../service/counter-group.service';
 import { Component, OnInit } from '@angular/core';
 import { Counter } from '../models/counter';
 
@@ -7,34 +8,22 @@ import { Counter } from '../models/counter';
   styleUrls: ['./counter-group.component.css']
 })
 export class CounterGroupComponent implements OnInit {
-  constructor() {
-    this.counters = new Array<Counter>();
+  constructor(public service: CounterGroupService) {
   }
 
-  public size: number = 5;
-
-  public counters: Array<Counter>;
+  public get counters(): Array<Counter> {
+    return this.service.counters;
+  }
 
   ngOnInit(): void {
-    this.generateCounters();
-  }
-
-  private generateCounters(): void {
-    for (let step = 0; step < this.size; step++) {
-      this.counters.push(new Counter());
-    }
   }
 
   public sum(): number {
-    return this.counters.reduce((result, item) => {
-      return result + item.account;
-    }, 0);
+    return this.service.sum();
   }
 
   public setSize(size: number): void {
-    this.size = size;
-    this.counters = new Array<Counter>();
-    this.generateCounters();
+    this.service.setSize(size);
   }
 }
 
