@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CounterComponent } from '../counter/counter.component';
 
 import { CounterGroupComponent } from './counter-group.component';
 
@@ -8,7 +9,7 @@ describe('CounterGroupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CounterGroupComponent]
+      declarations: [CounterGroupComponent, CounterComponent]
     })
       .compileComponents();
   });
