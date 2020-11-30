@@ -8,4 +8,8 @@ export class Counter {
   public increase(): void {
     this.account ++;
   }
+
+  public decrease(): void {
+    this.account--;
+  }
 }
