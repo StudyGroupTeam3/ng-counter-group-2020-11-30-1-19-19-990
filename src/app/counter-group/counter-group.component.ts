@@ -1,4 +1,3 @@
-import { element } from 'protractor';
 import { Component, OnInit } from '@angular/core';
 import { Counter } from '../models/counter';
 
@@ -8,7 +7,6 @@ import { Counter } from '../models/counter';
   styleUrls: ['./counter-group.component.css']
 })
 export class CounterGroupComponent implements OnInit {
-
   constructor() {
     this.counters = new Array<Counter>();
   }
@@ -18,6 +16,10 @@ export class CounterGroupComponent implements OnInit {
   public counters: Array<Counter>;
 
   ngOnInit(): void {
+    this.generateCounters();
+  }
+
+  private generateCounters(): void {
     for (let step = 0; step < this.size; step++) {
       this.counters.push(new Counter());
     }
@@ -28,4 +30,11 @@ export class CounterGroupComponent implements OnInit {
       return result + item.account;
     }, 0);
   }
+
+  public setSize(size: number): void {
+    this.size = size;
+    this.counters = new Array<Counter>();
+    this.generateCounters();
+  }
 }
+
