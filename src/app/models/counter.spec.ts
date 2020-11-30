@@ -16,4 +16,16 @@ describe('Counter', () => {
     // then
     expect(counter.account).toBe(10);
   });
+
+  it('should increase acount by 1 when call increase()', () => {
+    // given
+    const account = 0;
+
+    // when
+    const counter = new Counter(account);
+    counter.increase();
+
+    // then
+    expect(counter.account).toBe(account + 1);
+  });
 });
