@@ -1,25 +1,38 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Counter } from './../models/counter';
+import { Component, OnInit, Input } from '@angular/core';
+import { NzButtonSize } from 'ng-zorro-antd/button';
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.css']
 })
+
 export class CounterComponent implements OnInit {
+  constructor() {
+    // this.counter = new Counter();
+   }
 
-  constructor() { }
+   @Input()
+  public counter!: Counter;
 
-  public account: number = 0;
+  size: NzButtonSize = 'small';
+
+  public get account(): number {
+    return this.counter.counter;
+  }
 
   ngOnInit(): void {
   }
 
   public increase(): void {
-    this.account++;
+    this.counter.increase();
   }
 
   public decrease(): void {
-    this.account--;
+    this.counter.decrease();
   }
 
+  public reset(): void {
+    this.counter.reset();
+  }
 }

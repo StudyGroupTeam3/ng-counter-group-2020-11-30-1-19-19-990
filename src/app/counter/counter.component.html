@@ -1,3 +1,5 @@
-<button (click)="increase()">+</button>
-<label> {{account}} </label>
-<button (click)="decrease()">-</button>
+<button nz-button [nzSize]="size" nzType="dashed" (click)="increase()">+</button>
+
+  <label style="text-align: center; display: inline-grid; width: 3em"> {{account}} </label>
+<button nz-button [nzSize]="size" nzType="dashed" (click)="decrease()">-</button>
+<button nz-button [nzSize]="size" nzType="primary" (click)="reset()">reset</button>

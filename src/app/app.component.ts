@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Counter } from './models/counter';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-counter-group';
+  public account = new Counter();
 }
