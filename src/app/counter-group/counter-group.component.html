@@ -1,4 +1,4 @@
-<input type="number" nz-input [(ngModel)]="sizechange" placeholder="input values"/> &nbsp; &nbsp; <button nz-button [nzSize]="size" nzType="primary" nzShape="round" (click)="setSize()"><strong>setSize</strong></button>
+<input nz-input  (keyup.enter) = "setSize()" type="number" [(ngModel)]="sizechange" placeholder="input values"/> &nbsp; &nbsp; <button nz-button [nzSize]="size" nzType="primary" nzShape="round" (click)="setSize()"><strong>setSize</strong></button>
 <div *ngFor= "let counter of counters">
   <app-counter [counter] = "counter"></app-counter>
 </div>
