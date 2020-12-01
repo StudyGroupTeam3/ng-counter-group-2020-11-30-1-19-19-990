@@ -1,0 +1,9 @@
+<input [(ngModel)]="service.size" type="number" (keyup.enter)="setSize(service.size)">
+<button nz-button nzType="primary" (click) = "setSize(service.size)">setSize</button>
+
+<div *ngFor="let counter of counters">
+  <app-counter [counter]="counter"></app-counter>
+</div>
+<label>{{sum()}}</label>
+<button nz-button nzType="primary" (click) = "resetCounters()">reset</button>
+

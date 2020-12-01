@@ -1,4 +1,6 @@
+import { CounterGroupComponent } from './../counter-group/counter-group.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Counter } from '../models/counter';
 
 import { CounterComponent } from './counter.component';
 
@@ -8,7 +10,7 @@ describe('CounterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CounterComponent ]
+      declarations: [ CounterComponent, CounterGroupComponent ]
     })
     .compileComponents();
   });
@@ -16,6 +18,7 @@ describe('CounterComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CounterComponent);
     component = fixture.componentInstance;
+    component.counter = new Counter();
     fixture.detectChanges();
   });
 
@@ -23,25 +26,36 @@ describe('CounterComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should increase account when call increase', () => {
+  it('should increase account by 1 when call increase', () => {
     // given
-    component.account = 0;
+    component.counter.account = 0;
 
     // when
-    component.increase();
+    component.counter.increase();
 
     // then
-    expect(component.account).toBe(1);
+    expect(component.counter.account).toBe(1);
   });
 
-  it('should decrease account when call decrease', () => {
+  it('should decrease account by 1 when call decrease', () => {
     // given
-    component.account = 0;
+    component.counter.account = 0;
 
     // when
-    component.decrease();
+    component.counter.decrease();
 
     // then
-    expect(component.account).toBe(-1);
+    expect(component.counter.account).toBe(-1);
+  });
+
+  it('should count be reset as 0 when click reset button', () => {
+    // given
+    component.counter.account = 5;
+
+    // when
+    component.reset();
+
+    // then
+    expect(component.account).toBe(0);
   });
 });
