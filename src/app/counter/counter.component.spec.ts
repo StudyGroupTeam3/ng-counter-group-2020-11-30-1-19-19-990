@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Counter } from '../models/counter';
 
 import { CounterComponent } from './counter.component';
 
@@ -8,14 +9,15 @@ describe('CounterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CounterComponent ]
+      declarations: [CounterComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CounterComponent);
     component = fixture.componentInstance;
+    component.counter = new Counter();
     fixture.detectChanges();
   });
 
@@ -25,7 +27,7 @@ describe('CounterComponent', () => {
 
   it('should increase account when call increase', () => {
     // given
-    component.account = 0;
+    component.counter.account = 0;
 
     // when
     component.increase();
@@ -36,12 +38,23 @@ describe('CounterComponent', () => {
 
   it('should decrease account when call decrease', () => {
     // given
-    component.account = 0;
+    component.counter.account = 0;
 
     // when
     component.decrease();
 
     // then
     expect(component.account).toBe(-1);
+  });
+
+  it('should reset account to 0 when call reset', () => {
+    // given
+    component.counter.account = 5;
+
+    // when
+    component.reset();
+
+    // then
+    expect(component.account).toBe(0);
   });
 });
